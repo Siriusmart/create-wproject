@@ -1,6 +1,6 @@
 {
     "processors": {
-        "**/": "wp-index",
-        "**": "wp-copy"
+        "**/": "index",
+        "**": "copy"
     }
 }
