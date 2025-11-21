@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { mkdirSync, cpSync } from 'fs';
-import { join } from 'path';
+import { mkdirSync, cpSync, renameSync } from 'fs';
+import path, { join } from 'path';
 import { fileURLToPath } from 'url';
 
 const cwd = process.cwd();
@@ -15,5 +15,6 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const templateDir = join(__dirname, 'template');
 
 cpSync(templateDir, target, { recursive: true });
+renameSync(path.join(target, "gitignore"), path.join(target, ".gitignore"));
 
 console.log(`Created ${projectName}`);
